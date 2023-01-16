@@ -1,0 +1,13 @@
+const path = require('path');
+
+const sequelizePath = path.resolve('src', 'infra', 'db', 'sequelize');
+
+const sequelizeConfig = {
+    config: path.resolve(sequelizePath, 'config', 'database.ts'),
+    'models-path': path.resolve(sequelizePath, 'models'),
+    'migrations-path': path.resolve(sequelizePath, 'migrations'),
+    'seeders-path': path.resolve(sequelizePath, 'seeders'),
+    url: 'mysql://challenge:secret@localhost:3306/challenge',
+};
+
+module.exports = sequelizeConfig;
