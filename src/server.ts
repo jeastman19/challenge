@@ -1,6 +1,15 @@
 import { app } from './app';
 import config from './config';
 
-app.listen(config.port, () =>
-    console.log(`Server is running on port ${config.port}!`)
-);
+const start = async (): Promise<void> => {
+    try {
+        app.listen(config.port, () => {
+            console.log(`Server started on port ${config.port}`);
+        });
+    } catch (error) {
+        console.error(error);
+        process.exit(1);
+    }
+};
+
+void start();
