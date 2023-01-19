@@ -4,7 +4,7 @@ import ratelimit from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import { router } from './routes';
+import productsRouter from './modules/products/routes';
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use(router);
+app.use(productsRouter);
 
 let i: number = 5;
 
