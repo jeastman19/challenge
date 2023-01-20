@@ -10,7 +10,8 @@
         "format": "prettier --write \"**/*.{ts,js}\"",
         "lint": "eslint . --ext .ts",
         "start": "tsc && node dist/index.js",
-        "test": "jest"
+        "test": "jest",
+        "test:watch": "jest --watch"
     },
     "devDependencies": {
         "@types/cors": "^2.8.13",
